@@ -16877,7 +16877,7 @@
 
       // Send filtered bookmarks to server to create new bookmarks file
       const response = await fetch(
-        `${window.location.origin}/.netlify/functions/index`,
+        `${window.location.origin}/.netlify/functions/create-bookmarks-file`,
         {
           method: "POST",
           body: JSON.stringify({ bookmarks: filteredBookmarks }),
