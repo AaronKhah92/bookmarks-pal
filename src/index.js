@@ -1,12 +1,12 @@
-import express from "express";
-import bodyParser from "body-parser";
-const { json } = bodyParser;
-import cors from "cors";
+const express = require("express");
+const serverless = require("serverless-http");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 
 app.use(
-  json(),
+  bodyParser.json(),
   cors({
     origin: "*",
   })
@@ -33,4 +33,4 @@ app.post("/create-bookmarks-file", async (req, res) => {
   res.send(text);
 });
 
-app.listen(3399, () => console.log("Server listening on port 3399"));
+module.exports.handler = serverless(app);

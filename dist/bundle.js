@@ -16877,7 +16877,7 @@
 
       // Send filtered bookmarks to server to create new bookmarks file
       const response = await fetch(
-        `${window.location.origin}:3399/create-bookmarks-file`,
+        `${window.location.origin}:9000/create-bookmarks-file`,
         {
           method: "POST",
           body: JSON.stringify({ bookmarks: filteredBookmarks }),

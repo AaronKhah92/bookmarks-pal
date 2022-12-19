@@ -5,20 +5,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --quiet server",
-    "client": "npx http-server --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "build:netlify-lambda": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda build src",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda serve src"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serverless-http": "^3.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "concurrently": "^7.6.0",
+    "netlify-lambda": "^2.0.15",
     "nodemon": "^2.0.20",
     "rollup": "^3.7.5",
     "rollup-plugin-commonjs": "^10.1.0",
