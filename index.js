@@ -29,7 +29,7 @@ form.addEventListener("submit", async (event) => {
   );
 
   const response = await fetch(
-    `${window.location.origin}/.netlify/functions/index`,
+    `${window.location.origin}/.netlify/functions/index/create-bookmarks-file`,
     {
       method: "POST",
       body: JSON.stringify({ bookmarks: filteredBookmarks }),
