@@ -16875,9 +16875,8 @@
         title.includes(searchTerm)
       );
 
-      // Send filtered bookmarks to server to create new bookmarks file
       const response = await fetch(
-        `${window.location.origin}/.netlify/functions/create-bookmarks-file`,
+        `${window.location.origin}/.netlify/functions/index`,
         {
           method: "POST",
           body: JSON.stringify({ bookmarks: filteredBookmarks }),
@@ -16885,18 +16884,25 @@
         }
       );
 
-      console.log(response);
+      // Check if the request was successful
+      if (response.ok) {
+        // Get the HTML text from the response
+        const html = await response.text();
 
-      // Download new bookmarks file
-      const file = await response.blob();
-      const url = window.URL.createObjectURL(file);
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = url;
-      a.download = "filtered-bookmarks.html";
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
+        // Create a hidden link element
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+        link.download = "bookmarks.html";
+
+        // Append the link to the document and click it
+        document.body.appendChild(link);
+        link.click();
+
+        // Remove the link from the document
+        document.body.removeChild(link);
+      } else {
+        console.error("Error creating bookmarks file");
+      }
     });
 
 })();
