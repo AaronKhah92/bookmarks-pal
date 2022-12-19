@@ -1,6 +1,6 @@
 [build]
   functions = "functions"
-  command = "npm run build:netlify-lambda && netlify-lambda serve src"
+  command = "npm run build:netlify-lambda"
 
 
 [dev]
