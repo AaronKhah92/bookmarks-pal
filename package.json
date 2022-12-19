@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:netlify-lambda": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda build src",
+    "build:netlify-lambda": "netlify-lambda build src",
     "start": "SET NODE_OPTIONS=--openssl-legacy-provider && netlify-lambda serve src"
   },
   "author": "",
