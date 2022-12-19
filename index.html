@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmark Sorter</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <form id="bookmark-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col items-stretch  md:w-1/2 lg:w-1/3">
+    <div class="text-gray-700 text-center py-4">
+      <p class="mb-2">If you wanna support this project:</p>
+      <a target="_blank" href="https://www.buymeacoffee.com/aaronace" class="inline-block bg-green-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-900 mr-2 mb-2">
+        Buy me a coffee
+      </a>
+    </div>
+    <hr class="mb-2">
+    <div class="mb-4">
+      <label for="bookmarks-file" class="block text-gray-700 text-sm font-bold mb-2">
+        Select Bookmarks File:
+      </label>
+      <input type="file" id="bookmarks-file" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label for="search-term" class="block text-gray-700 text-sm font-bold mb-2">
+        Enter Search Term:
+      </label>
+      <input type="text" id="search-term" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      Sort and Download
+    </button>
+  </form>
+    <script src="bundle.js"></script>
+</body>
+</html>
