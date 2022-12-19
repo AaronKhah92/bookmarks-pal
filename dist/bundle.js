@@ -16876,7 +16876,7 @@
       );
 
       const response = await fetch(
-        `${window.location.origin}/.netlify/functions/index`,
+        `${window.location.origin}:9000/create-bookmarks-file`,
         {
           method: "POST",
           body: JSON.stringify({ bookmarks: filteredBookmarks }),
